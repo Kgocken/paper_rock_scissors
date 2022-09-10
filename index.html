@@ -14,7 +14,6 @@
                 return(compChoice)
             }
 
-            getComputerChoice();
             <!--user inputs paper, rock or scissors-->
             function getPlayerChoice() {
             const input = prompt("paper, rock or scissors?");
@@ -57,7 +56,17 @@
             playRound(playerSelection, computerSelection)
 
             <!--Play best of 5-->
-            
+
+            function game() {
+                for (let i = 0; i < 4; i++) {
+                    playRound(getPlayerChoice(), computerSelection)
+                }
+
+                let 
+            }
+
+            game()
+
         </script>
     </body>
 </html>
