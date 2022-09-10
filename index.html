@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>paper, rock, scissors</title>
+    </head>
+    <body>
+        <script>
+            <!--computer inputs paper, rock or scissors randomly-->
+            function getComputerChoice() {
+                const gameArray = ["paper", "rock", "scissors"];
+                const rand = Math.floor(Math.random() * gameArray.length);
+                const compChoice = gameArray[rand];
+                return(compChoice)
+            }
+
+            getComputerChoice();
+            <!--user inputs paper, rock or scissors-->
+            function getPlayerChoice() {
+            const input = prompt("paper, rock or scissors?");
+            const userChoice = input.toLowerCase();
+            if (userChoice !== "paper" && userChoice !== "rock" && userChoice !== "scissors") {
+                getPlayerChoice();
+            }
+            else {
+                return(input)
+            }
+        }
+            <!--get choices-->
+            const computerSelection = getComputerChoice();
+            const playerSelection = getPlayerChoice();
+
+            <!--game elements-->
+            function draw(){
+                console.log("This round is a draw")
+            }
+
+            function win(){
+                console.log(`${playerSelection} beats ${computerSelection}. You Win!`)
+            }
+
+            function lose(){
+                console.log(`${computerSelection} beats ${playerSelection}. You Lose.`)
+            }
+            
+            <!--play one round-->
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection === computerSelection){
+                    draw();
+                } else if (playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "rock" && computerSelection === "scissors") {
+                    win();
+                } else {
+                    lose();
+                }
+            }
+
+            playRound(playerSelection, computerSelection)
+
+            <!--Play best of 5-->
+            
+        </script>
+    </body>
+</html>
