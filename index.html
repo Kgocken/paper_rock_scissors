@@ -22,28 +22,39 @@
                 getPlayerChoice();
             }
             else {
-                return(input)
+                return(userChoice)
             }
         }
             <!--get choices-->
+
+            let player = 0;
+
+            let comp = 0;
+
             const computerSelection = getComputerChoice();
+
             const playerSelection = getPlayerChoice();
 
             <!--game elements-->
             function draw(){
-                console.log("This round is a draw")
+                console.log(`${playerSelection} ties ${computerSelection}. This round is a draw. \nPlayer: ${player}  Computer: ${comp}`)
             }
 
             function win(){
-                console.log(`${playerSelection} beats ${computerSelection}. You Win!`)
+                player++;
+                console.log(`${playerSelection} beats ${computerSelection}. You Win! \nPlayer: ${player}  Computer: ${comp}`)
             }
 
             function lose(){
-                console.log(`${computerSelection} beats ${playerSelection}. You Lose.`)
+                comp++;
+                console.log(`${computerSelection} beats ${playerSelection}. You Lose.\nPlayer: ${player}  Computer: ${comp}`)
             }
+
+            
             
             <!--play one round-->
             function playRound(playerSelection, computerSelection) {
+
                 if (playerSelection === computerSelection){
                     draw();
                 } else if (playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper" || playerSelection === "rock" && computerSelection === "scissors") {
@@ -52,20 +63,33 @@
                     lose();
                 }
             }
+        
 
-            playRound(playerSelection, computerSelection)
+            
+
+            
 
             <!--Play best of 5-->
 
             function game() {
-                for (let i = 0; i < 4; i++) {
-                    playRound(getPlayerChoice(), computerSelection)
+
+                for (let i = 0; i < 5; i++) {
+
+                    playRound(playerSelection, computerSelection);
+                     
+                if (i >= 4 && player > comp) {
+                    console.log("Winner");
+                } else if (i >= 4 && comp > player) {
+                    console.log("Loser");
+                } else if (i >= 4) {
+                    console.log("Draw");
                 }
-
-                let 
+                }
             }
+                game()
+            
 
-            game()
+            
 
         </script>
     </body>
