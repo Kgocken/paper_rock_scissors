@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="gamestyle.css">
+        <script src="new.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <p class="welcome">
+                <h1>Step into the arena!!</h1>
+            </p>
+        </header>
+        <div class="buttons">
+            <button type="image" class="paper" id="btn" value="Paper" onclick="play(this.value)"><img src="paper.jpg" alt="Paper"></button>
+            <button type="image" class="rock" id="btn" value="Rock" onclick = "play(this.value)"><img src="rock.jpg" alt="Rock"></button>
+            <button type="image" class="scissors" id="btn" value="Scissors" onclick="play(this.value)"><img src="scissors.png" alt="Scissors"></button> 
+        </div>
+        <div class="results">
+            <div class="score" id="player">
+                <span class="title">Player Score</span>
+                <div class="total" id="pt"></div>
+            </div>
+            <div id="gameboard">
+                <h3><div id="field"></div></h3>
+                <h1><div id="podium"></div></h1>
+            </div>
+            <div class="score" id="comp">
+                <span class="title">Computer Score</span>
+                <div class="total" id="ct"></div>
+            </div>
+
+        </div>
+        <div class="restart">
+            <button onclick="window.location.reload();">Restart Game</button>
+        </div>
+    </body>
+</html>
